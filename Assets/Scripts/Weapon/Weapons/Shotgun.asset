@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa46f0d0eb5a3654c948e1fcc05b81e6, type: 3}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 7354595837322698712, guid: f2f067a7a475e2f4f955059f3b4a2af6, type: 3}
+  weaponName: "\u0414\u0440\u043E\u0431\u043E\u0432\u0438\u043A"
+  magazineSize: 27
+  reloadTime: 1
+  timeBetweenShooting: 0.2
+  timeBetweenShots: 0
+  hipSpread: 0.5
+  bulletsPerTap: 9
+  allowButtonHold: 0
+  aimSpeed: 6
+  recoilX: -2
+  recoilY: 2
+  recoilZ: 0.35
+  snappiness: 6
+  returnSpeed: 2
