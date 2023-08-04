@@ -9,12 +9,14 @@ public class Bullet : MonoBehaviour
     [SerializeField]private AudioClip ricochetteSound;
     [SerializeField] private LayerMask playerLayer;
 
+    //Настройка переменных для движения пули
     private void Start()
     {
         gravityAcceleration = -4f * Time.fixedDeltaTime * Time.fixedDeltaTime;
         velocity = transform.forward * bulletSpeed;
     }
 
+    //Движение и просчитывание пули
     private void FixedUpdate()
     {
         if (velocity == null)
@@ -46,6 +48,7 @@ public class Bullet : MonoBehaviour
         transform.position = nextPosition;
     }
 
+    //Осуществляет проверку на рикошет
     private bool DoesRicochette()
     {
         float randNumb = Random.Range(0f, 1f);
@@ -54,6 +57,7 @@ public class Bullet : MonoBehaviour
         else return false;
     }
 
+    //Разрушение объекта пули
     private void BulletDestroy()
     {
         Destroy(gameObject);

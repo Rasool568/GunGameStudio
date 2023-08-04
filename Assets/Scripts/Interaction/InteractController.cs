@@ -41,6 +41,7 @@ public class InteractController : MonoBehaviour
             PlayerInteract();
     }
 
+    //ѕровер€ет возможность взаимодействи€ и взаимодействует при необходимости
     private void PlayerInteract()
     {
         Ray ray = new(playerCamera.position, playerCamera.forward);

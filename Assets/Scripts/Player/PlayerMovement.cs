@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         if (!Busy) MyInput();
     }
 
+    //Обработка ввода игрока и просчёт движения и поворота
     private void MyInput()
     {
         HandleMovementStates();
@@ -96,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
     }
 
+    //Проверяет в каком из возможных состояний находится игрок
     private void HandleMovementStates()
     {
         if (currentState == newState)
@@ -126,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         currentState = newState;
     }
 
+    //Меняет чувствительность камеры игрока
     public void ChangeSensitivity(float _value)
     {
         sensitivity = _value;

@@ -15,6 +15,7 @@ public class MenuController : MonoBehaviour
     private InteractController ic;
     private WeaponController wc;
 
+    //Необходимая первичная настройка
     private void Start()
     {
         pm = GetComponent<PlayerMovement>();
@@ -26,6 +27,7 @@ public class MenuController : MonoBehaviour
         playerMenu.SetActive(true);
     }
 
+    //Проверяем на ввод игрока кнопки паузы
     private void Update()
     {
         if(Input.GetKeyDown(pauseKey))
@@ -34,6 +36,7 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    //Переключает панельку паузы (Вкл/Выкл)
     public void SetPause()
     {
         pause = !pause;
@@ -50,6 +53,7 @@ public class MenuController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
     }
 
+    //Переключает состояние звука (Вкл/Выкл)
     public void AudioToggle()
     {
         if (!AudioManager.AudioMute())
@@ -59,12 +63,13 @@ public class MenuController : MonoBehaviour
         PlaySound();
     }
 
+    //Кнопка выхода из игры
     public void ExitGame()
     {
         Application.Quit();
-        PlaySound();
     }
 
+    //Обработка смерти игрока
     public void PlayerDied()
     {
         pm.Busy = true;
@@ -77,12 +82,14 @@ public class MenuController : MonoBehaviour
         Cursor.visible = true;
     }
 
+    //Перезагружает игру (кнопка после смерти)
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         PlaySound();
     }
 
+    //Проигрывает звук кнопки
     public void PlaySound()
     {
         AudioManager.PlaySoundOnPlayer(buttonSound);

@@ -64,6 +64,7 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     private bool isWall;
 
+    //Необходимая первичная настройка
     private void Start()
     {
         startPosition = movementObject.position;
@@ -76,6 +77,7 @@ public class WeaponController : MonoBehaviour
         ReloadEnd();
     }
 
+    //Все функции выполняющиеся в Update
     private void Update()
     {
         if (Busy) return;
@@ -86,6 +88,7 @@ public class WeaponController : MonoBehaviour
         ControlRecoil();
     }
 
+    //Контроллирует ввод игрока
     private void MyInput()
     {
         if (currentWeapon == null) return;
@@ -117,6 +120,7 @@ public class WeaponController : MonoBehaviour
             ChangeWeapon(lmgWeapon);
     }
 
+    //Меняет оружие и обновляет интерфейс
     private void ChangeWeapon(WeaponSO _weaponToChange)
     {
         if(readyToShoot && !reloading && currentWeapon != _weaponToChange)
@@ -127,6 +131,7 @@ public class WeaponController : MonoBehaviour
         }
     }
 
+    //Обрабатывает стрельбу
     #region Shooting
     private void Shoot()
     {
@@ -196,6 +201,7 @@ public class WeaponController : MonoBehaviour
     }
     #endregion
 
+    //Обрабатывает отдачу
     #region Recoil
 
     private void ControlRecoil()
@@ -214,6 +220,7 @@ public class WeaponController : MonoBehaviour
 
     #endregion
 
+    //Движение оружия вверх - вниз и влево - вправо
     #region WeaponSway and Headbob
     private void SwayAndHeadbob(float _moveX, float _moveY)
     {
@@ -247,6 +254,7 @@ public class WeaponController : MonoBehaviour
     }
     #endregion
 
+    //Когда оружие проходит сквозь стену - поднимает его
     #region Wall cliping
     private void WallCheck()
     {
